@@ -1,0 +1,11 @@
+data/rawData
+data/Input_*
+
+train/Figs
+train/model_para
+train/output
+train/runs
+train/vs_out
+train/all_scalars.json
+
+__pycache__
