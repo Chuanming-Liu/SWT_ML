@@ -10,10 +10,10 @@ FilePath: /SurfTomoCNN-new/config.py
 '''
 class Config(object):
     def __init__(self):
-        self.filepath_disp_training     = '../data/Input_disp_combine_gaussian_map/'
-        self.filepath_vs_training       = '../data/Input_Vs/'
+        self.filepath_disp_training     = '../data_cas/Input_disp_combine_gaussian_map/'
+        self.filepath_vs_training       = '../data_cas/Input_Vs/'
 
-        self.filepath_disp_real    = '../data/Input_predict/' 
+        self.filepath_disp_real    = '../data_cas/Input_predict/' 
 
 
         ''' 
@@ -27,8 +27,8 @@ class Config(object):
         self.plot = True         # show validation result during training
         self.alpha=0.0000        # damping, not used here 
         self.testsize=0.2
-        self.pretrained = False
-        self.start = 0
+        self.pretrained = True
+        self.start = 600
         self.pretrain_net = "./model_para/model_epoch_"+str(self.start)+".pth"
 
         # config added by Ayu
