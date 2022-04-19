@@ -10,6 +10,7 @@ from scipy.interpolate import interp1d
 # if depth_spacing in [0.5,1,2,5,6,10]:
 #     depth = np.arange(0,depth_max+depth_spacing,depth_spacing)
 # os.system('rm -rf Input_Vs && mkdir Input_Vs')
+# os.system('rm -rf Input_Vs_txt && mkdir Input_Vs_txt')
 
 # count = 0
 # for lat in np.arange(0,180,0.1):
@@ -28,7 +29,19 @@ from scipy.interpolate import interp1d
 #                 # for using those data to predict dispersion curve comparing the vs from cnn
 #                 vs_out = np.array([depth,vs])
 #                 np.save("Input_Vs/"+key,vs_out.T)
+#                 np.savetxt("Input_Vs_txt/"+key+'.txt',vs_out.T,fmt="%10.5f")
 
+''' training disp calculation '''
+# # modify vs_syn_dir and other parameters in syn_disp_from_vs.m before running
+# dirMatRun = 'syn_disp_from_vs'
+# os.system(f'cd {dirMatRun} && matlab -nojvm < syn_disp_from_vs.m')
+# import shutil
+# os.system("rm -rf Input_syn_disp && mkdir Input_syn_disp")
+# for fname in glob.glob(f'{dirMatRun}/disp_out/*.txt'):
+#     newName = 'Input_syn_disp/' + '_'.join(os.path.basename(fname).split('_')[1:])
+#     shutil.copyfile(fname,newName)
+# os.system(f'cd {dirMatRun} && rm -rf *.in null synmodel.txt Vsmodel 1Dmodel.txt disp_gr.txt disp_ph.txt gr.tmp')
+# os.system(f'cd {dirMatRun} && rm -rf disp_out vs_out')
 
 ''' training disp input '''
 def get_filename(filepath_disp_training,filepath_vs_training,dataset_type):
@@ -76,7 +89,8 @@ def gaussian(vel,vel_axis,r=0.1):
     return x_gaussian
 
 
-filepath_disp_training = '../rawData/Shenetal2013_disp_pg_real/'
+# filepath_disp_training = '../rawData/Shenetal2013_disp_pg_real/'
+filepath_disp_training = 'Input_syn_disp/'
 filepath_vs_training   = '../rawData/Shenetal2013_Vs/'
 os.system("rm -rf Input_disp_combine_gaussian_map  && mkdir Input_disp_combine_gaussian_map  ")
 r=0.1

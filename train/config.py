@@ -27,8 +27,8 @@ class Config(object):
         self.plot = True         # show validation result during training
         self.alpha=0.0000        # damping, not used here 
         self.testsize=0.2
-        self.pretrained = False
-        self.start = 0
+        self.pretrained = True
+        self.start = 600
         self.pretrain_net = "./model_para/model_epoch_"+str(self.start)+".pth"
 
         # config added by Ayu
