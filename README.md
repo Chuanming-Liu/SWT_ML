@@ -20,3 +20,6 @@ train:  scripts to do training and predicting
 1. data/dataPrepare.py, four parts separated by docstring
 2. Main_Train.py
 3. Main_Predict.py
+
+## poster
+![Poster](Poster.jpg)
