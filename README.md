@@ -4,7 +4,7 @@ Inferring shear wave velocity structure from surface wave dispersion data using 
 with Mengyu Wu
 
 ## Contents
-rawData: rawData, ignored by git
+rawData: rawData
 
 data:   scripts to convert information in rawData to ML input (inputs are also saved here temporarily)
     syn_disp_from_vs:  calculating synthetic dispersion based on vs profile
