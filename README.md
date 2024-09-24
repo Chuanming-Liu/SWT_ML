@@ -1,7 +1,7 @@
 # SWT_ML
-CSCI-5622 course project
+Inferring shear wave velocity structure from surface wave dispersion data using Neural Network
 
-Ayu's project directory: /home/ayu/Projects/ML/SWT_ML
+with Mengyu Wu
 
 ## Contents
 rawData: rawData, ignored by git
